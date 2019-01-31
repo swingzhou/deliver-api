@@ -1,7 +1,7 @@
 define({ "api": [
   {
     "type": "POST",
-    "url": "/v1/xlink-deliver-base/expressDeliverRest/listExpressDeliver",
+    "url": "/v1/xlink-deliver-rest/expressDeliverRest/listExpressDeliver",
     "title": "分页查询快递发货列表",
     "name": "listExpressDeliver",
     "group": "ExpressDeliverRestController",
@@ -372,7 +372,7 @@ define({ "api": [
   },
   {
     "type": "GET",
-    "url": "/v1/xlink-deliver-base/shipBillRest/getCivilShipBillInfo/{shipBillId}",
+    "url": "/v1/xlink-deliver-rest/shipBillRest/getCivilShipBillInfo/{shipBillId}",
     "title": "获取民用售租出货单详情",
     "name": "getCivilShipBillInfo",
     "group": "ShipBillRestController",
@@ -708,7 +708,7 @@ define({ "api": [
   },
   {
     "type": "GET",
-    "url": "/v1/xlink-deliver-base/shipBillRest/getShipBillInfo/{shipBillId}",
+    "url": "/v1/xlink-deliver-rest/shipBillRest/getShipBillInfo/{shipBillId}",
     "title": "获取商用售租出货单详情",
     "name": "getShipBillInfo",
     "group": "ShipBillRestController",
@@ -1044,7 +1044,7 @@ define({ "api": [
   },
   {
     "type": "POST",
-    "url": "/v1/xlink-deliver-base/shipBillRest/listCivilSaleRentShipBill",
+    "url": "/v1/xlink-deliver-rest/shipBillRest/listCivilSaleRentShipBill",
     "title": "分页查询民用售租出货单列表",
     "name": "listCivilSaleRentShipBill",
     "group": "ShipBillRestController",
@@ -1387,7 +1387,7 @@ define({ "api": [
   },
   {
     "type": "POST",
-    "url": "/v1/xlink-deliver-base/shipBillRest/listCivilShipBillDevices/{shipBillId}",
+    "url": "/v1/xlink-deliver-rest/shipBillRest/listCivilShipBillDevices/{shipBillId}",
     "title": "查询民用售租订单设备明细",
     "name": "listCivilShipBillDevices",
     "group": "ShipBillRestController",
@@ -1590,7 +1590,7 @@ define({ "api": [
   },
   {
     "type": "POST",
-    "url": "/v1/xlink-deliver-base/shipBillRest/listSaleRentShipBill",
+    "url": "/v1/xlink-deliver-rest/shipBillRest/listSaleRentShipBill",
     "title": "分页查询商用售租出货单列表",
     "name": "listSaleRentShipBill",
     "group": "ShipBillRestController",
@@ -1933,7 +1933,7 @@ define({ "api": [
   },
   {
     "type": "POST",
-    "url": "/v1/xlink-deliver-base/shipBillRest/listShipBillDevices",
+    "url": "/v1/xlink-deliver-rest/shipBillRest/listShipBillDevices",
     "title": "查询商用售租订单设备明细",
     "name": "listShipBillDevices",
     "group": "ShipBillRestController",
