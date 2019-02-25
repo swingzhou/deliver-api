@@ -372,6 +372,335 @@ define({ "api": [
   },
   {
     "type": "POST",
+    "url": "/v1/xlink-deliver-rest/expressDeliverRest/printExpressBill",
+    "title": "打印快递发货",
+    "name": "printExpressBill",
+    "group": "ExpressDeliverRestController",
+    "description": "<p>打印快递发货</p>",
+    "permission": [
+      {
+        "name": "userOnly"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "array(object)",
+            "optional": false,
+            "field": "no-name",
+            "description": "<p>对象数组</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "orderNo",
+            "description": "<p>订单号</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "receiverProvince",
+            "description": "<p>收货省</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "receiverCity",
+            "description": "<p>收货市</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "receiverDistrict",
+            "description": "<p>收货区</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "receiverAddress",
+            "description": "<p>收货详细地址</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "receiverName",
+            "description": "<p>收货人姓名</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "receiverMobile",
+            "description": "<p>收货人手机号</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "cpCode",
+            "description": "<p>快递公司编码</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "array(object)",
+            "optional": false,
+            "field": "items",
+            "description": "<p>订单商品明细数组对象</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "items.productPn",
+            "description": "<p>产品料号</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "items.qty",
+            "description": "<p>商品数量</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": false,
+            "field": "items.itemName",
+            "description": "<p>商品名称</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Request-Example:",
+          "content": "[\n   {\n     \"orderNo\": \"string\",\n     \"receiverProvince\": \"string\",\n     \"receiverCity\": \"string\",\n     \"receiverDistrict\": \"string\",\n     \"receiverAddress\": \"string\",\n     \"receiverName\": \"string\",\n     \"receiverMobile\": \"string\",\n     \"cpCode\": \"string\",\n     \"items\": [\n       {\n         \"productPn\": \"string\",\n         \"qty\": \"string\",\n         \"itemName\": \"string\"\n       }\n     ]\n   }\n]",
+          "type": "json"
+        }
+      ]
+    },
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "code",
+            "description": "<p>返回编码</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "array(object)",
+            "optional": false,
+            "field": "data",
+            "description": "<p>返回数据数组对象</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.cpCode",
+            "description": "<p>快递公司编码</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "array(object)",
+            "optional": false,
+            "field": "data.items",
+            "description": "<p>订单商品明细数组对象</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.items.productPn",
+            "description": "<p>产品料号</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.items.qty",
+            "description": "<p>商品数量</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.items.itemName",
+            "description": "<p>商品名称</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.memberName",
+            "description": "<p>店铺名</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.orderNo",
+            "description": "<p>订单号</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.receiverAddress",
+            "description": "<p>收货详细地址</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.receiverDistrict",
+            "description": "<p>收货区</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.receiverMobile",
+            "description": "<p>收货人手机号</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.receiverName",
+            "description": "<p>收货人姓名</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.shortAddress",
+            "description": "<p>大头信息</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.waybillCode",
+            "description": "<p>快递单号</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "msg",
+            "description": "<p>返回信息</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "responseTime",
+            "description": "<p>返回响应时间</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "status",
+            "description": "<p>响应状态</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Success-Response: ",
+          "content": "HTTP/1.1 200 OK \n{\n \"code\": \"string\",\n \"data\": [\n {\n   \"cpCode\": \"string\",\n   \"items\": [\n     {\n       \"productPn\": \"string\",\n       \"qty\": \"string\",\n       \"itemName\": \"string\"\n     }\n   ],\n   \"memberName\": \"string\",\n   \"orderNo\": \"string\",\n   \"receiverAddress\": \"string\",\n   \"receiverDistrict\": \"string\",\n   \"receiverMobile\": \"string\",\n   \"receiverName\": \"string\",\n   \"shortAddress\": \"string\",\n   \"waybillCode\": \"string\"\n }\n ],\n \"msg\": \"string\",\n \"responseTime\": \"2019-02-22T11:50:44.138Z\",\n \"status\": \"string\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "错误码详情": [
+          {
+            "group": "errorCode",
+            "type": "string",
+            "optional": false,
+            "field": "20307006",
+            "description": "<p>快递发货打印列表为空</p>"
+          },
+          {
+            "group": "errorCode",
+            "type": "string",
+            "optional": false,
+            "field": "000000",
+            "description": "<p>请求成功</p>"
+          }
+        ],
+        "错误格式说明": [
+          {
+            "group": "errorFormat",
+            "type": "string",
+            "optional": false,
+            "field": "msg",
+            "description": "<p>接口返回的错误信息</p>"
+          },
+          {
+            "group": "errorFormat",
+            "type": "string",
+            "optional": false,
+            "field": "code",
+            "description": "<p>错误码</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "{\n    \"responseTime\": \"2019-01-02T09:47:15.032+0000\",\n    \"code\": \"20107007\",\n    \"status\": \"200\",\n    \"msg\": \"fail to add account period\",\n    \"data\": null\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "version": "0.0.0",
+    "filename": "src/main/java/cn/xlink/cloud/deliver/rest/controller/ExpressDeliverRestController.java",
+    "groupTitle": "ExpressDeliverRestController",
+    "header": {
+      "fields": {
+        "Header": [
+          {
+            "group": "Header",
+            "type": "string",
+            "optional": false,
+            "field": "Access-Token",
+            "description": "<p>xlink平台颁发的凭证</p>"
+          },
+          {
+            "group": "Header",
+            "type": "string",
+            "optional": false,
+            "field": "Content-Type",
+            "description": "<p>application/json</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Header-Example:",
+          "content": "{\n\"Access-Token\":\"访问凭证\",\n\"Content-Type\":\"application/json\"\n}",
+          "type": "json"
+        }
+      ]
+    }
+  },
+  {
+    "type": "POST",
     "url": "/v1/xlink-deliver-rest/shipBillRest/addCivilSaleRentShipInfo",
     "title": "添加民用售租出货信息",
     "name": "addCivilSaleRentShipInfo",
