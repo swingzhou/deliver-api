@@ -373,10 +373,10 @@
   {
     "type": "POST",
     "url": "/v1/xlink-deliver-rest/expressDeliverRest/printExpressBill",
-    "title": "打印快递发货",
+    "title": "快递发货打印",
     "name": "printExpressBill",
     "group": "ExpressDeliverRestController",
-    "description": "<p>打印快递发货</p>",
+    "description": "<p>快递发货打印</p>",
     "permission": [
       {
         "name": "userOnly"
@@ -390,7 +390,7 @@
             "type": "array(object)",
             "optional": false,
             "field": "no-name",
-            "description": "<p>对象数组</p>"
+            "description": "<p>打印数组对象</p>"
           },
           {
             "group": "Parameter",
@@ -425,7 +425,7 @@
             "type": "string",
             "optional": false,
             "field": "receiverAddress",
-            "description": "<p>收货详细地址</p>"
+            "description": "<p>详细地址</p>"
           },
           {
             "group": "Parameter",
@@ -446,14 +446,14 @@
             "type": "string",
             "optional": false,
             "field": "cpCode",
-            "description": "<p>快递公司编码</p>"
+            "description": "<p>物流公司编码</p>"
           },
           {
             "group": "Parameter",
             "type": "array(object)",
             "optional": false,
             "field": "items",
-            "description": "<p>订单商品明细数组对象</p>"
+            "description": "<p>详情</p>"
           },
           {
             "group": "Parameter",
@@ -467,21 +467,21 @@
             "type": "string",
             "optional": false,
             "field": "items.qty",
-            "description": "<p>商品数量</p>"
+            "description": "<p>数量</p>"
           },
           {
             "group": "Parameter",
             "type": "string",
             "optional": false,
             "field": "items.itemName",
-            "description": "<p>商品名称</p>"
+            "description": "<p>名称</p>"
           }
         ]
       },
       "examples": [
         {
           "title": "Request-Example:",
-          "content": "[\n   {\n     \"orderNo\": \"string\",\n     \"receiverProvince\": \"string\",\n     \"receiverCity\": \"string\",\n     \"receiverDistrict\": \"string\",\n     \"receiverAddress\": \"string\",\n     \"receiverName\": \"string\",\n     \"receiverMobile\": \"string\",\n     \"cpCode\": \"string\",\n     \"items\": [\n       {\n         \"productPn\": \"string\",\n         \"qty\": \"string\",\n         \"itemName\": \"string\"\n       }\n     ]\n   }\n]",
+          "content": "[\n  {\n    \"orderNo\": \"string\",\n    \"receiverProvince\": \"string\",\n    \"receiverCity\": \"string\",\n    \"receiverDistrict\": \"string\",\n    \"receiverAddress\": \"string\",\n    \"receiverName\": \"string\",\n    \"receiverMobile\": \"string\",\n    \"cpCode\": \"string\",\n    \"items\": [\n      {\n        \"productPn\": \"string\",\n        \"qty\": \"string\",\n        \"itemName\": \"string\"\n      }\n    ]\n  }\n]",
           "type": "json"
         }
       ]
@@ -501,21 +501,21 @@
             "type": "array(object)",
             "optional": false,
             "field": "data",
-            "description": "<p>返回数据数组对象</p>"
+            "description": "<p>返回数据</p>"
           },
           {
             "group": "Success 200",
             "type": "string",
             "optional": false,
             "field": "data.cpCode",
-            "description": "<p>快递公司编码</p>"
+            "description": "<p>物流公司编码</p>"
           },
           {
             "group": "Success 200",
             "type": "array(object)",
             "optional": false,
             "field": "data.items",
-            "description": "<p>订单商品明细数组对象</p>"
+            "description": "<p>详情</p>"
           },
           {
             "group": "Success 200",
@@ -529,21 +529,28 @@
             "type": "string",
             "optional": false,
             "field": "data.items.qty",
-            "description": "<p>商品数量</p>"
+            "description": "<p>数量</p>"
           },
           {
             "group": "Success 200",
             "type": "string",
             "optional": false,
             "field": "data.items.itemName",
-            "description": "<p>商品名称</p>"
+            "description": "<p>产品名称</p>"
           },
           {
             "group": "Success 200",
             "type": "string",
             "optional": false,
             "field": "data.memberName",
-            "description": "<p>店铺名</p>"
+            "description": "<p>沁园饮水旗舰店</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.msg",
+            "description": "<p>etw打印信息</p>"
           },
           {
             "group": "Success 200",
@@ -563,6 +570,13 @@
             "group": "Success 200",
             "type": "string",
             "optional": false,
+            "field": "data.receiverCity",
+            "description": "<p>收货城市</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
             "field": "data.receiverDistrict",
             "description": "<p>收货区</p>"
           },
@@ -571,7 +585,7 @@
             "type": "string",
             "optional": false,
             "field": "data.receiverMobile",
-            "description": "<p>收货人手机号</p>"
+            "description": "<p>收货人手机</p>"
           },
           {
             "group": "Success 200",
@@ -584,15 +598,29 @@
             "group": "Success 200",
             "type": "string",
             "optional": false,
+            "field": "data.receiverProvince",
+            "description": "<p>收货省</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
             "field": "data.shortAddress",
-            "description": "<p>大头信息</p>"
+            "description": "<p>短地址码</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "boolean",
+            "optional": false,
+            "field": "data.success",
+            "description": "<p>打印是否成功，需要先根据这个进行判断，成功的才有物流单号</p>"
           },
           {
             "group": "Success 200",
             "type": "string",
             "optional": false,
             "field": "data.waybillCode",
-            "description": "<p>快递单号</p>"
+            "description": "<p>物流单号</p>"
           },
           {
             "group": "Success 200",
@@ -620,50 +648,7 @@
       "examples": [
         {
           "title": "Success-Response: ",
-          "content": "HTTP/1.1 200 OK \n{\n \"code\": \"string\",\n \"data\": [\n {\n   \"cpCode\": \"string\",\n   \"items\": [\n     {\n       \"productPn\": \"string\",\n       \"qty\": \"string\",\n       \"itemName\": \"string\"\n     }\n   ],\n   \"memberName\": \"string\",\n   \"orderNo\": \"string\",\n   \"receiverAddress\": \"string\",\n   \"receiverDistrict\": \"string\",\n   \"receiverMobile\": \"string\",\n   \"receiverName\": \"string\",\n   \"shortAddress\": \"string\",\n   \"waybillCode\": \"string\"\n }\n ],\n \"msg\": \"string\",\n \"responseTime\": \"2019-02-22T11:50:44.138Z\",\n \"status\": \"string\"\n}",
-          "type": "json"
-        }
-      ]
-    },
-    "error": {
-      "fields": {
-        "错误码详情": [
-          {
-            "group": "errorCode",
-            "type": "string",
-            "optional": false,
-            "field": "20307006",
-            "description": "<p>快递发货打印列表为空</p>"
-          },
-          {
-            "group": "errorCode",
-            "type": "string",
-            "optional": false,
-            "field": "000000",
-            "description": "<p>请求成功</p>"
-          }
-        ],
-        "错误格式说明": [
-          {
-            "group": "errorFormat",
-            "type": "string",
-            "optional": false,
-            "field": "msg",
-            "description": "<p>接口返回的错误信息</p>"
-          },
-          {
-            "group": "errorFormat",
-            "type": "string",
-            "optional": false,
-            "field": "code",
-            "description": "<p>错误码</p>"
-          }
-        ]
-      },
-      "examples": [
-        {
-          "title": "Error-Response:",
-          "content": "{\n    \"responseTime\": \"2019-01-02T09:47:15.032+0000\",\n    \"code\": \"20107007\",\n    \"status\": \"200\",\n    \"msg\": \"fail to add account period\",\n    \"data\": null\n}",
+          "content": "{\n  \"code\": \"string\",\n  \"data\": [\n    {\n      \"cpCode\": \"string\",\n      \"items\": [\n        {\n          \"productPn\": \"string\",\n          \"qty\": \"string\",\n          \"itemName\": \"string\"\n        }\n      ],\n      \"memberName\": \"string\",\n      \"msg\": \"string\",\n      \"orderNo\": \"string\",\n      \"receiverAddress\": \"string\",\n      \"receiverCity\": \"string\",\n      \"receiverDistrict\": \"string\",\n      \"receiverMobile\": \"string\",\n      \"receiverName\": \"string\",\n      \"receiverProvince\": \"string\",\n      \"shortAddress\": \"string\",\n      \"success\": true,\n      \"waybillCode\": \"string\"\n    }\n  ],\n  \"msg\": \"string\",\n  \"responseTime\": \"2019-02-26T03:16:43.437Z\",\n  \"status\": \"string\"\n}",
           "type": "json"
         }
       ]
@@ -694,6 +679,42 @@
         {
           "title": "Header-Example:",
           "content": "{\n\"Access-Token\":\"访问凭证\",\n\"Content-Type\":\"application/json\"\n}",
+          "type": "json"
+        }
+      ]
+    },
+    "error": {
+      "fields": {
+        "错误格式说明": [
+          {
+            "group": "errorFormat",
+            "type": "string",
+            "optional": false,
+            "field": "msg",
+            "description": "<p>接口返回的错误信息</p>"
+          },
+          {
+            "group": "errorFormat",
+            "type": "string",
+            "optional": false,
+            "field": "code",
+            "description": "<p>错误码</p>"
+          }
+        ],
+        "错误码详情": [
+          {
+            "group": "errorCode",
+            "type": "string",
+            "optional": false,
+            "field": "000000",
+            "description": "<p>请求成功</p>"
+          }
+        ]
+      },
+      "examples": [
+        {
+          "title": "Error-Response:",
+          "content": "{\n    \"responseTime\": \"2019-01-02T09:47:15.032+0000\",\n    \"code\": \"20107007\",\n    \"status\": \"200\",\n    \"msg\": \"fail to add account period\",\n    \"data\": null\n}",
           "type": "json"
         }
       ]
@@ -2931,6 +2952,13 @@
             "optional": true,
             "field": "query.productName",
             "description": "<p>产品名称</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
+            "optional": true,
+            "field": "query.productId",
+            "description": "<p>产品id</p>"
           },
           {
             "group": "Parameter",
