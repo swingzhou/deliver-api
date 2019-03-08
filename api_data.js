@@ -59,6 +59,13 @@ define({ "api": [
           {
             "group": "Parameter",
             "type": "string",
+            "optional": true,
+            "field": "query.ids",
+            "description": "<p>快递发货标识数组</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "string",
             "optional": false,
             "field": "query.status",
             "description": "<p>状态 待打单PENDING_PRINT/已打单PRINTED</p>"
@@ -1456,6 +1463,13 @@ define({ "api": [
           },
           {
             "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.contactNum",
+            "description": "<p>联系方式</p>"
+          },
+          {
+            "group": "Success 200",
             "type": "array(object)",
             "optional": false,
             "field": "data.saleRentShipBillProducts",
@@ -1789,6 +1803,13 @@ define({ "api": [
             "optional": false,
             "field": "data.orderId",
             "description": "<p>订单标识</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.contactNum",
+            "description": "<p>联系方式</p>"
           },
           {
             "group": "Success 200",
