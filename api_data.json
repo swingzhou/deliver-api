@@ -2074,6 +2074,13 @@
             "group": "Success 200",
             "type": "string",
             "optional": false,
+            "field": "data.rentPeriod",
+            "description": "<p>租期</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
             "field": "data.dealerCode",
             "description": "<p>经销商编码</p>"
           },
