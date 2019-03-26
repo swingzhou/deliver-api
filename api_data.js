@@ -1878,6 +1878,13 @@ define({ "api": [
             "group": "Success 200",
             "type": "string",
             "optional": false,
+            "field": "data.rentPeriod",
+            "description": "<p>租期</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
             "field": "data.id",
             "description": "<p>出货单标识</p>"
           },
@@ -2069,13 +2076,6 @@ define({ "api": [
             "optional": false,
             "field": "data.consignee",
             "description": "<p>收货人</p>"
-          },
-          {
-            "group": "Success 200",
-            "type": "string",
-            "optional": false,
-            "field": "data.rentPeriod",
-            "description": "<p>租期</p>"
           },
           {
             "group": "Success 200",
