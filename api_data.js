@@ -536,6 +536,13 @@ define({ "api": [
           },
           {
             "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.list.drShipPlanProductVos.stockType",
+            "description": "<p>出货仓库类型  租赁仓RENT_STOCK/U9仓U9_STOCK</p>"
+          },
+          {
+            "group": "Success 200",
             "type": "decimal(string)",
             "optional": false,
             "field": "data.list.drShipPlanProductVos.tax",
@@ -615,6 +622,13 @@ define({ "api": [
             "group": "Success 200",
             "type": "string",
             "optional": false,
+            "field": "data.list.stockType",
+            "description": "<p>仓库类型   租赁仓RENT_STOCK/U9仓U9_STOCK/混合Mix</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
             "field": "msg",
             "description": "<p>返回信息</p>"
           },
@@ -637,7 +651,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response:",
-          "content": "{\n  \"code\": \"string\",\n  \"data\": {\n    \"count\": 0,\n    \"list\": [\n      {\n        \"acceptInfo\": \"string\",\n        \"comment\": \"string\",\n        \"createDate\": 0,\n        \"customName\": \"string\",\n        \"deliverDate\": 0,\n        \"drShipPlanProductVos\": [\n          {\n            \"amount\": 0,\n            \"availableQuantity\": 0,\n            \"batNum\": \"string\",\n            \"noTaxAmount\": 0,\n            \"num\": 0,\n            \"orderVolumn\": 0,\n            \"productId\": \"string\",\n            \"productName\": \"string\",\n            \"productPn\": \"string\",\n            \"rentPrice\": 0,\n            \"spec\": \"string\",\n            \"stockId\": \"string\",\n            \"tax\": 0,\n            \"unit\": \"string\"\n          }\n        ],\n        \"orderId\": \"string\",\n        \"orderType\": \"DIRECT_RENT\",\n        \"planMan\": \"string\",\n        \"planManName\": \"string\",\n        \"rentPeriod\": 0,\n        \"shipPlanId\": \"string\",\n        \"shipPlanStatus\": \"PENDING_SHIPBILL\",\n        \"shipPlanType\": \"DIRECT_RENT\"\n      }\n    ]\n  },\n  \"msg\": \"string\",\n  \"responseTime\": \"2019-04-25T17:13:45.501Z\",\n  \"status\": \"string\"\n}",
+          "content": "{\n  \"code\": \"string\",\n  \"data\": {\n    \"count\": 0,\n    \"list\": [\n      {\n        \"acceptInfo\": \"string\",\n        \"comment\": \"string\",\n        \"createDate\": 0,\n        \"customName\": \"string\",\n        \"deliverDate\": 0,\n        \"drShipPlanProductVos\": [\n          {\n            \"amount\": 0,\n            \"availableQuantity\": 0,\n            \"batNum\": \"string\",\n            \"noTaxAmount\": 0,\n            \"num\": 0,\n            \"orderVolumn\": 0,\n            \"productId\": \"string\",\n            \"productName\": \"string\",\n            \"productPn\": \"string\",\n            \"rentPrice\": 0,\n            \"spec\": \"string\",\n            \"stockId\": \"string\",\n            \"tax\": 0,\n            \"unit\": \"string\",\n            \"stockType\":\"RENT_STOCK\"\n          }\n        ],\n        \"orderId\": \"string\",\n        \"orderType\": \"DIRECT_RENT\",\n        \"planMan\": \"string\",\n        \"planManName\": \"string\",\n        \"rentPeriod\": 0,\n        \"shipPlanId\": \"string\",\n        \"shipPlanStatus\": \"PENDING_SHIPBILL\",\n        \"shipPlanType\": \"DIRECT_RENT\",\n        \"stockType\":\"RENT_STOCK\"\n      }\n    ]\n  },\n  \"msg\": \"string\",\n  \"responseTime\": \"2019-04-25T17:13:45.501Z\",\n  \"status\": \"string\"\n}",
           "type": "json"
         }
       ]
@@ -1964,6 +1978,13 @@ define({ "api": [
           },
           {
             "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.list.drShipBillProductInfoVos.drShipBillDetailInfoVos.stockNumber",
+            "description": "<p>仓库编号</p>"
+          },
+          {
+            "group": "Success 200",
             "type": "decimal(string)",
             "optional": false,
             "field": "data.list.drShipBillProductInfoVos.drShipBillDetailInfoVos.tax",
@@ -2107,7 +2128,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response: ",
-          "content": "{\n  \"code\": \"string\",\n  \"data\": {\n    \"count\": 0,\n    \"list\": [\n      {\n        \"acceptInfo\": \"string\",\n        \"comment\": \"string\",\n        \"createDate\": 0,\n        \"customName\": \"string\",\n        \"deliverDate\": 0,\n        \"drShipBillProductInfoVos\": [\n          {\n            \"drShipBillDetailInfoVos\": [\n              {\n                \"amount\": 0,\n                \"availableQuantity\": 0,\n                \"batNum\": \"string\",\n                \"noTaxAmount\": 0,\n                \"num\": 0,\n                \"rentPrice\": 0,\n                \"stockId\": \"string\",\n                \"tax\": 0,\n                \"unit\": \"string\"\n              }\n            ],\n            \"orderVolumn\": 0,\n            \"productId\": \"string\",\n            \"productName\": \"string\",\n            \"productPn\": \"string\",\n            \"spec\": \"string\",\n            \"stockType\":\"RENT_STOCK\"\n          }\n        ],\n        \"orderId\": \"string\",\n        \"orderType\": \"DIRECT_RENT\",\n        \"planMan\": \"string\",\n        \"planManName\": \"string\",\n        \"rentPeriod\": 0,\n        \"shipPlanId\": \"string\",\n        \"shipPlanStatus\": \"PENDING_SHIPBILL\",\n        \"shipPlanType\": \"DIRECT_RENT\"\n      }\n    ]\n  },\n  \"msg\": \"string\",\n  \"responseTime\": \"2019-04-26T02:21:18.833Z\",\n  \"status\": \"string\"\n}",
+          "content": "{\n  \"code\": \"string\",\n  \"data\": {\n    \"count\": 0,\n    \"list\": [\n      {\n        \"acceptInfo\": \"string\",\n        \"comment\": \"string\",\n        \"createDate\": 0,\n        \"customName\": \"string\",\n        \"deliverDate\": 0,\n        \"drShipBillProductInfoVos\": [\n          {\n            \"drShipBillDetailInfoVos\": [\n              {\n                \"amount\": 0,\n                \"availableQuantity\": 0,\n                \"batNum\": \"string\",\n                \"noTaxAmount\": 0,\n                \"num\": 0,\n                \"rentPrice\": 0,\n                \"stockId\": \"string\",\n                \"stockNumber\":\"string\",\n                \"tax\": 0,\n                \"unit\": \"string\"\n              }\n            ],\n            \"orderVolumn\": 0,\n            \"productId\": \"string\",\n            \"productName\": \"string\",\n            \"productPn\": \"string\",\n            \"spec\": \"string\",\n            \"stockType\":\"RENT_STOCK\"\n          }\n        ],\n        \"orderId\": \"string\",\n        \"orderType\": \"DIRECT_RENT\",\n        \"planMan\": \"string\",\n        \"planManName\": \"string\",\n        \"rentPeriod\": 0,\n        \"shipPlanId\": \"string\",\n        \"shipPlanStatus\": \"PENDING_SHIPBILL\",\n        \"shipPlanType\": \"DIRECT_RENT\"\n      }\n    ]\n  },\n  \"msg\": \"string\",\n  \"responseTime\": \"2019-04-26T02:21:18.833Z\",\n  \"status\": \"string\"\n}",
           "type": "json"
         }
       ]
@@ -3660,6 +3681,34 @@ define({ "api": [
           },
           {
             "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.drShipBillProductVos.stockId",
+            "description": "<p>仓库标识</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.drShipBillProductVos.stockType",
+            "description": "<p>仓库类型  租赁仓RENT_STOCK/U9仓  U9_STOCK</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.drShipBillProductVos.stockNumber",
+            "description": "<p>仓库编号</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.drShipBillProductVos.shipBillDetailId",
+            "description": "<p>出货单详情标识</p>"
+          },
+          {
+            "group": "Success 200",
             "type": "long",
             "optional": false,
             "field": "data.finishDate",
@@ -3726,7 +3775,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response: ",
-          "content": "{\n  \"code\": \"string\",\n  \"data\": {\n    \"acceptRegion\": \"string\",\n    \"addressDetail\": \"string\",\n    \"consignee\": \"string\",\n    \"contactNum\": \"string\",\n    \"createDate\": 0,\n    \"customCode\": \"string\",\n    \"customId\": \"string\",\n    \"customName\": \"string\",\n    \"drShipBillProductVos\": [\n      {\n        \"amount\": 0,\n        \"noTaxAmount\": 0,\n        \"number\": 0,\n        \"productId\": \"string\",\n        \"productModel\": \"string\",\n        \"productName\": \"string\",\n        \"productPn\": \"string\",\n        \"rentPrice\": 0,\n        \"spec\": \"string\",\n        \"tax\": 0,\n        \"unit\": \"string\",\n        \"unitPrice\": 0\n      }\n    ],\n    \"finishDate\": 0,\n    \"id\": \"string\",\n    \"orderId\": \"string\",\n    \"shipBillStatus\": \"SHIPPING\",\n    \"shipBillType\": \"DIRECT_RENT\"\n  },\n  \"msg\": \"string\",\n  \"responseTime\": \"2019-03-25T02:19:59.926Z\",\n  \"status\": \"string\"\n}",
+          "content": "{\n  \"code\": \"string\",\n  \"data\": {\n    \"acceptRegion\": \"string\",\n    \"addressDetail\": \"string\",\n    \"consignee\": \"string\",\n    \"contactNum\": \"string\",\n    \"createDate\": 0,\n    \"customCode\": \"string\",\n    \"customId\": \"string\",\n    \"customName\": \"string\",\n    \"drShipBillProductVos\": [\n      {\n        \"amount\": 0,\n        \"noTaxAmount\": 0,\n        \"number\": 0,\n        \"productId\": \"string\",\n        \"productModel\": \"string\",\n        \"productName\": \"string\",\n        \"productPn\": \"string\",\n        \"rentPrice\": 0,\n        \"spec\": \"string\",\n        \"tax\": 0,\n        \"unit\": \"string\",\n        \"unitPrice\": 0,\n        \"shipBillDetailId\":\"string\"\n        \"stockType\":\"RENT_STOCK\"\n        \"stockNumber\":\"string\"\n      }\n    ],\n    \"finishDate\": 0,\n    \"id\": \"string\",\n    \"orderId\": \"string\",\n    \"shipBillStatus\": \"SHIPPING\",\n    \"shipBillType\": \"DIRECT_RENT\"\n  },\n  \"msg\": \"string\",\n  \"responseTime\": \"2019-03-25T02:19:59.926Z\",\n  \"status\": \"string\"\n}",
           "type": "json"
         }
       ]
@@ -5090,6 +5139,20 @@ define({ "api": [
             "group": "Success 200",
             "type": "string",
             "optional": false,
+            "field": "data.list.saleRentShipBillProducts.stockType",
+            "description": "<p>出货仓库类型  租赁仓RENT_STOCK/U9仓   U9_STOCK</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
+            "field": "data.list.saleRentShipBillProducts.stockNumber",
+            "description": "<p>出货仓编号</p>"
+          },
+          {
+            "group": "Success 200",
+            "type": "string",
+            "optional": false,
             "field": "msg",
             "description": "<p>返回信息</p>"
           },
@@ -5112,7 +5175,7 @@ define({ "api": [
       "examples": [
         {
           "title": "Success-Response: ",
-          "content": "{\n  \"code\": \"string\",\n  \"data\": {\n    \"count\": 0,\n    \"list\": [\n      {\n        \"billType\": \"DIRECT_RENT\",\n        \"createDate\": 0,\n        \"customCode\": \"string\",\n        \"customName\": \"string\",\n        \"finishDate\": 0,\n        \"id\": \"string\",\n        \"orderId\": \"string\",\n        \"saleRentShipBillProducts\": [\n          {\n            \"amount\": 0,\n            \"noTaxAmount\": 0,\n            \"number\": 0,\n            \"productId\": \"string\",\n            \"productModel\": \"string\",\n            \"productName\": \"string\",\n            \"productPn\": \"string\",\n            \"rentPrice\": 0,\n            \"spec\": \"string\",\n            \"tax\": 0,\n            \"unit\": \"string\",\n            \"unitPrice\": 0\n          }\n        ]\n      }\n    ]\n  },\n  \"msg\": \"string\",\n  \"responseTime\": \"2019-03-25T02:15:27.472Z\",\n  \"status\": \"string\"\n}",
+          "content": "{\n  \"code\": \"string\",\n  \"data\": {\n    \"count\": 0,\n    \"list\": [\n      {\n        \"billType\": \"DIRECT_RENT\",\n        \"createDate\": 0,\n        \"customCode\": \"string\",\n        \"customName\": \"string\",\n        \"finishDate\": 0,\n        \"id\": \"string\",\n        \"orderId\": \"string\",\n        \"saleRentShipBillProducts\": [\n          {\n            \"amount\": 0,\n            \"noTaxAmount\": 0,\n            \"number\": 0,\n            \"productId\": \"string\",\n            \"productModel\": \"string\",\n            \"productName\": \"string\",\n            \"productPn\": \"string\",\n            \"rentPrice\": 0,\n            \"spec\": \"string\",\n            \"tax\": 0,\n            \"unit\": \"string\",\n            \"unitPrice\": 0,\n            \"stockType\":\"RENT_STOCK\",\n            \"stockNumber\":\"string\"\n          }\n        ]\n      }\n    ]\n  },\n  \"msg\": \"string\",\n  \"responseTime\": \"2019-03-25T02:15:27.472Z\",\n  \"status\": \"string\"\n}",
           "type": "json"
         }
       ]
